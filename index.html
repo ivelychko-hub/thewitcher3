@@ -1,1 +1,64 @@
-Hola buenas tardes
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/estils.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/fromsoftwarelogo.png" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="creador.html">Creador</a></li>
+                <li><a href="services.html">Sign in</a></li>
+            </ul>
+        </nav>
+        <section id="intro" class="section">
+            <h1 id="Juegosfrom">Videojuegos de From Software</h1>
+            <p>
+                FromSoftware, liderado por Hidetaka Miyazaki, ha revolucionado la industria de los videojuegos con títulos icónicos como <br>**Dark Souls**, **Bloodborne**, y **Elden Ring**. Sus juegos son famosos por su dificultad, diseño artístico y narrativa profunda.
+            </p>
+        </section>
+        <div class="contenedor-imagen">
+            <img src="img/dark souls 3.jpg" alt="Dark Souls" class="game-image" data-large="img/dark souls 3.jpg">
+            <img src="img/bloodborne.jpg" alt="Bloodborne" class="game-image" data-large="img/bloodborne.jpg">
+            <img src="img/elden ring.jpg" alt="Elden Ring" class="game-image" data-large="img/elden ring.jpg">
+        </div>
+        <div id="large-image-container">
+            <img id="large-image" src="img/dark souls 3.jpg" alt="Large Image" style="display: none;">
+            <img id="large-image" src="img/bloodborne.jpg" alt="Large Image" style="display: none;">
+            <img id="large-image" src="img/elden ring.jpg" alt="Large Image" style="display: none;">
+        </div>
+        <script>
+            // Select all images
+const images = document.querySelectorAll('.game-image');
+
+// Select the large image container
+const largeImage = document.getElementById('large-image');
+
+// Add click event listener to each image
+images.forEach((image) => {
+    image.addEventListener('click', () => {
+        // Get the large image URL from the data-large attribute
+        const largeImageUrl = image.getAttribute('data-large');
+        
+        // Set the large image source to the selected image's large version
+        largeImage.src = largeImageUrl;
+        
+        // Make the large image visible
+        largeImage.style.display = 'block';
+    });
+});
+        </script>
+    </body>
+</html>
